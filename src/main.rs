@@ -11,8 +11,8 @@ fn main() {
         .version_short("v")
         .author("Stephan Boyer <stephan@stephanboyer.com>")
         .about(
-            "A simple project to demonstrate the cross-platform release management process for my \
-            open source work.",
+            "A simple project to demonstrate the cross-platform release management process I use \
+            for my open source work.",
         )
         .get_matches();
 
