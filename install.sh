@@ -14,7 +14,7 @@
   DESTINATION="${PREFIX:-/usr/local/bin}/stem-cell"
 
   # Which version to download
-  RELEASE="v${VERSION:-0.0.0}"
+  RELEASE="v${VERSION:-0.0.1}"
 
   # Determine which binary to download.
   FILENAME=''
