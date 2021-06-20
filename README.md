@@ -2,7 +2,7 @@
 
 [![Build status](https://github.com/stepchowfun/stem-cell/workflows/Continuous%20integration/badge.svg?branch=main)](https://github.com/stepchowfun/stem-cell/actions?query=branch%3Amain)
 
-This is a simple project to demonstrate the cross-platform release management process for my open source work.
+This is a simple project to demonstrate the cross-platform release management process I use for my open source work. The program itself just prints `Hello, World!`.
 
 ## Installation instructions
 
