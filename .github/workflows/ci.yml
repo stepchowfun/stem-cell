@@ -57,8 +57,8 @@ jobs:
         set -euo pipefail
 
         # Build and test.
-        cargo build --release --target x86_64-apple-darwin
-        NO_COLOR=true cargo test # [ref:colorless_tests]
+        cargo build --locked --release --target x86_64-apple-darwin
+        NO_COLOR=true cargo test --locked # [ref:colorless_tests]
     - uses: actions/upload-artifact@v2
       with:
         name: x86_64-apple-darwin
@@ -80,15 +80,29 @@ jobs:
         set -euo pipefail
 
         # Build and test.
-        cargo build --release --target x86_64-pc-windows-msvc
-        NO_COLOR=true cargo test # [ref:colorless_tests]
+        cargo build --locked --release --target x86_64-pc-windows-msvc
+        NO_COLOR=true cargo test --locked # [ref:colorless_tests]
     - uses: actions/upload-artifact@v2
       with:
         name: x86_64-pc-windows-msvc
         path: target/x86_64-pc-windows-msvc/release/stem-cell.exe
         if-no-files-found: error
-  install:
-    name: Run the installer script to validate it
+  install-macos:
+    name: Run the installer script on macOS to validate it
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        # Make Bash not silently ignore errors.
+        set -euo pipefail
+
+        # Run the installer script.
+        PREFIX=. ./install.sh # [ref:remove_to_bootstrap]
+
+        # Run the installed binary.
+        ./stem-cell # [ref:remove_to_bootstrap]
+  install-ubuntu:
+    name: Run the installer script on Ubuntu to validate it
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -97,12 +111,15 @@ jobs:
         set -euo pipefail
 
         # Run the installer script.
-        PREFIX=. ./install.sh # [tag:remove_to_bootstrap]
+        PREFIX=. ./install.sh # [ref:remove_to_bootstrap]
+
+        # Run the installed binary.
+        ./stem-cell # [ref:remove_to_bootstrap]
   create-release:
     name: Create a release on GitHub if applicable
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
-    needs: [ci-linux, ci-macos, ci-windows, install]
+    needs: [ci-linux, ci-macos, ci-windows, install-macos, install-ubuntu]
     steps:
     - uses: actions/checkout@v2
     - uses: actions/download-artifact@v2

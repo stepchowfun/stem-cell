@@ -67,10 +67,11 @@ When setting up the repository on GitHub, change the following settings:
       - `Build and test on Windows`
       - `Build and test on macOS`
       - `Create a release on GitHub if applicable`
-      - `Run the installer script to validate it`
+      - `Run the installer script on Ubuntu to validate it`
+      - `Run the installer script on macOS to validate it`
   - Enable `Include administrators`.
 - Under `Options`, enable `Automatically delete head branches`.
 
-The GitHub workflow will fail initially because the job to install the latest release will not find any release to download. You will need to bootstrap the v0.0.0 release by temporarily removing or commenting out the line in the workflow with the `[ref:remove_to_bootstrap]` tag.
+The GitHub workflow will fail initially because the job to install the latest release will not find any release to download. You will need to bootstrap the v0.0.0 release by temporarily removing or commenting out the line in the workflow referencing the `[tag:remove_to_bootstrap]` tag.
 
 This repository can be used as a starting point for a new project. Be sure to rename all references to `Stem Cell` and `stem-cell` accordingly.
