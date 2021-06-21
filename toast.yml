@@ -12,8 +12,9 @@ tasks:
       # - build-essential - Used for linking the binary
       # - curl            - Used for installing Tagref
       # - ripgrep         - Used for line length checking
+      # - shellcheck      - Used for linting shell scripts
       apt-get update
-      apt-get install --yes build-essential curl ripgrep
+      apt-get install --yes build-essential curl ripgrep shellcheck
 
   install_tagref:
     description: Install Tagref, a reference checking tool.
@@ -139,6 +140,7 @@ tasks:
       - .github # Linted by `tagref`
       - .gitignore # Used by `tagref`
       - README.md # Linted by `tagref`
+      - install.sh # Linted by `ShellCheck`
       - toast.yml # Linted by `tagref`
     user: user
     command: |
@@ -158,6 +160,9 @@ tasks:
 
       # Check references with Tagref.
       tagref
+
+      # Lint shell files with ShellCheck.
+      find . -type f -name '*.sh' | xargs shellcheck
 
       # Check code formatting with Rustfmt. We temporarily convert macro invocations into function
       # calls so that Rustfmt's `trailing_comma` feature applies to macro arguments. [ref:format]
