@@ -8,7 +8,7 @@ This repository can be used as a starting point for a new project. Be sure to re
 
 ## Installation instructions
 
-### Easy installation on macOS or Linux
+### Automated installation on macOS or Linux
 
 If you are running macOS or Linux on an x86-64 CPU, you can install Stem Cell with this command:
 
@@ -20,9 +20,7 @@ The same command can be used again to update Stem Cell to the latest version.
 
 **NOTE:** Piping `curl` to `sh` is considered dangerous by some since the server might be compromised. If you're concerned about this, you can download and inspect the installation script or choose one of the other installation methods.
 
-#### Customizing the installation
-
-The installation script supports the following environment variables:
+The installation script supports the following optional environment variables:
 
 - `VERSION=x.y.z` (defaults to the latest version)
 - `PREFIX=/path/to/install` (defaults to `/usr/local/bin`)
