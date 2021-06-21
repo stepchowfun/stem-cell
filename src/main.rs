@@ -1,3 +1,5 @@
+#![deny(warnings)]
+
 use clap::App;
 
 // The program version
