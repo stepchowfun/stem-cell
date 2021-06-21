@@ -4,6 +4,8 @@
 
 This is a simple project to demonstrate the cross-platform release management process I use for my open source work. The program itself just prints `Hello, World!`.
 
+This repository can be used as a starting point for a new project. Be sure to rename all references to `Stem Cell` and `stem-cell` accordingly. Then follow the instructions in [`MAINTAINERS.md`](https://github.com/stepchowfun/stem-cell/blob/main/MAINTAINERS.md) to configure the repository on GitHub.
+
 ## Installation instructions
 
 ### Easy installation on macOS or Linux
@@ -44,34 +46,3 @@ cargo install stem-cell
 ```
 
 You can run that command with `--force` to update an existing installation.
-
-## For maintainers
-
-### Release instructions
-
-1. Bump the version in `Cargo.toml`, run `cargo build` to update `Cargo.lock`, and update `CHANGELOG.md` with information about the new version. Ship those changes as a single commit.
-2. Once the GitHub workflow has finished on the `main` branch, update the version in `install.sh` to point to the new release.
-
-### GitHub instructions
-
-When setting up the repository on GitHub, change the following settings:
-
-- Under `Secrets`, add the following repository secrets with appropriate values:
-  - `CRATES_IO_TOKEN`
-  - `DOCKER_PASSWORD`
-- Under `Branches`, add a branch protection rule for the `main` branch.
-  - Enable `Require status checks to pass before merging`.
-    - Enable `Require branches to be up to date before merging`.
-    - Add the following status checks:
-      - `Build and test on Linux`
-      - `Build and test on Windows`
-      - `Build and test on macOS`
-      - `Create a release on GitHub if applicable`
-      - `Run the installer script on Ubuntu to validate it`
-      - `Run the installer script on macOS to validate it`
-  - Enable `Include administrators`.
-- Under `Options`, enable `Automatically delete head branches`.
-
-The GitHub workflow will fail initially because the job to install the latest release will not find any release to download. You will need to bootstrap the v0.0.0 release by temporarily removing or commenting out the line in the workflow referencing the `[tag:remove_to_bootstrap]` tag.
-
-This repository can be used as a starting point for a new project. Be sure to rename all references to `Stem Cell` and `stem-cell` accordingly.

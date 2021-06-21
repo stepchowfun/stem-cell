@@ -139,7 +139,6 @@ tasks:
     input_paths:
       - .github # Linted by `tagref`
       - .gitignore # Used by `tagref`
-      - README.md # Linted by `tagref`
       - install.sh # Linted by `ShellCheck`
       - toast.yml # Linted by `tagref`
     user: user
