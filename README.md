@@ -29,7 +29,7 @@ For example, the following will install Stem Cell into the working directory:
 curl https://raw.githubusercontent.com/stepchowfun/stem-cell/main/install.sh -LSfs | PREFIX=. sh
 ```
 
-If you are concerned about piping `curl` to `sh`, you can alternatively download the binary from the [releases page](https://github.com/stepchowfun/stem-cell/releases) and place it in some directory in your [`PATH`](https://en.wikipedia.org/wiki/PATH_\(variable\)) (e.g., `/usr/local/bin`).
+If you are concerned about piping `curl` to `sh`, you can alternatively download the binary from the [releases page](https://github.com/stepchowfun/stem-cell/releases), make it executable (e.g., with `chmod`), and place it in some directory in your [`PATH`](https://en.wikipedia.org/wiki/PATH_\(variable\)) (e.g., `/usr/local/bin`).
 
 ### Installation on Windows (x86-64)
 
