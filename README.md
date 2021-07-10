@@ -33,7 +33,7 @@ If you are concerned about piping `curl` to `sh`, you can alternatively download
 
 ### Installation on Windows (x86-64)
 
-If you are running Windows on an x86-64 CPU, download the latest binary from the [releases page](https://github.com/stepchowfun/stem-cell/releases) and rename it to `toast` (or `toast.exe` if you have file extensions visible). Create a directory called `Toast` in your `%PROGRAMFILES%` directory (e.g., `C:\Program Files\Toast`), and place the renamed binary in there. Then, in the "Advanced" tab of the "System Properties" section of "Control Panel", click on "Environment Variables..." and add the full path to the new `Toast` directory to the `PATH` variable under "System variables". Note that the `Program Files` directory might have a different name if Windows is configured for language other than English.
+If you are running Windows on an x86-64 CPU, download the latest binary from the [releases page](https://github.com/stepchowfun/stem-cell/releases) and rename it to `stem-cell` (or `stem-cell.exe` if you have file extensions visible). Create a directory called `Stem Cell` in your `%PROGRAMFILES%` directory (e.g., `C:\Program Files\Stem Cell`), and place the renamed binary in there. Then, in the "Advanced" tab of the "System Properties" section of "Control Panel", click on "Environment Variables..." and add the full path to the new `Stem Cell` directory to the `PATH` variable under "System variables". Note that the `Program Files` directory might have a different name if Windows is configured for language other than English.
 
 To update to an existing installation, simply replace the existing binary.
 
