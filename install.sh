@@ -31,7 +31,7 @@
   fi
   if uname -a | grep -qi 'Darwin.*arm64'; then
     echo 'AArch64 macOS detected.'
-    FILENAME=tagref-aarch64-apple-darwin
+    FILENAME=stem-cell-aarch64-apple-darwin
   fi
 
   # Find a temporary location for the binary.
