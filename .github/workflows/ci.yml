@@ -51,6 +51,16 @@ jobs:
         name: aarch64-unknown-linux-gnu
         path: artifacts/stem-cell
         if-no-files-found: error
+    - run: |
+        # Make Bash not silently ignore errors.
+        set -euo pipefail
+        # The artifact name will contain the target triple, so the file name doesn't need to.
+        mv artifacts/stem-cell-aarch64-unknown-linux-musl artifacts/stem-cell
+    - uses: actions/upload-artifact@v2
+      with:
+        name: aarch64-unknown-linux-musl
+        path: artifacts/stem-cell
+        if-no-files-found: error
   ci-windows:
     name: Build for Windows
     runs-on: windows-latest
@@ -176,6 +186,9 @@ jobs:
           artifacts/aarch64-unknown-linux-gnu/stem-cell \
           artifacts/stem-cell-aarch64-unknown-linux-gnu
         mv \
+          artifacts/aarch64-unknown-linux-musl/stem-cell \
+          artifacts/stem-cell-aarch64-unknown-linux-musl
+        mv \
           artifacts/x86_64-apple-darwin/stem-cell \
           artifacts/stem-cell-x86_64-apple-darwin
         mv \
@@ -192,6 +205,7 @@ jobs:
           --attach 'artifacts/stem-cell-x86_64-unknown-linux-gnu' \
           --attach 'artifacts/stem-cell-x86_64-unknown-linux-musl' \
           --attach 'artifacts/stem-cell-aarch64-unknown-linux-gnu' \
+          --attach 'artifacts/stem-cell-aarch64-unknown-linux-musl' \
           --attach 'artifacts/stem-cell-x86_64-apple-darwin' \
           --attach 'artifacts/stem-cell-aarch64-apple-darwin' \
           --attach 'artifacts/stem-cell-x86_64-pc-windows-msvc.exe' \
