@@ -5,15 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.6] - 2023-06-18
+
+### Added
+- Stem Cell supports a new platform: Windows on x86-64.
+
 ## [0.0.5] - 2023-06-02
 
 ### Added
-- Stem Cell supports a new platform: AArch64 musl Linux.
+- Stem Cell supports a new platform: musl Linux on AArch64.
 
 ## [0.0.4] - 2023-05-23
 
 ### Added
-- Stem Cell supports a new platform: AArch64 GNU Linux.
+- Stem Cell supports a new platform: GNU Linux on AArch64.
 
 ## [0.0.3] - 2023-05-13
 
