@@ -95,12 +95,12 @@ jobs:
         NO_COLOR=true cargo test --locked # [ref:colorless_tests]
     - uses: actions/upload-artifact@v3
       with:
-        name: x86_64-pc-windows-msvc.exe
+        name: x86_64-pc-windows-msvc
         path: target/x86_64-pc-windows-msvc/release/stem-cell.exe
         if-no-files-found: error
     - uses: actions/upload-artifact@v3
       with:
-        name: aarch64-pc-windows-msvc.exe
+        name: aarch64-pc-windows-msvc
         path: target/aarch64-pc-windows-msvc/release/stem-cell.exe
         if-no-files-found: error
   ci-macos:
