@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.6] - 2023-06-18
 
 ### Added
-- Stem Cell supports a new platform: Windows on x86-64.
+- Stem Cell supports a new platform: Windows on AArch64.
 
 ## [0.0.5] - 2023-06-02
 
