@@ -1,5 +1,3 @@
-#![deny(clippy::all, clippy::pedantic, warnings)]
-
 use clap::App;
 
 // The program version
