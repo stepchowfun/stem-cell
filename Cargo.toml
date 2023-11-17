@@ -10,5 +10,10 @@ homepage = "https://github.com/stepchowfun/stem-cell"
 repository = "https://github.com/stepchowfun/stem-cell"
 readme = "README.md"
 
+[lints]
+clippy.all = "deny"
+clippy.pedantic = "deny"
+rust.warnings = "deny"
+
 [dependencies]
 clap = "2"
