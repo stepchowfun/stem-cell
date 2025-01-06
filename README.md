@@ -1,5 +1,7 @@
 # Stem Cell
 
+[![Build status](https://github.com/stepchowfun/stem-cell/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/stepchowfun/stem-cell/actions?query=branch%3Amain)
+
 This is a simple project to demonstrate the cross-platform release management process I use for my open source work. The program itself just prints `Hello, World!`.
 
 This repository can be used as a starting point for a new project. Be sure to rename all references to `Stem Cell` and `stem-cell` accordingly. Then follow the instructions in [`MAINTAINERS.md`](https://github.com/stepchowfun/stem-cell/blob/main/MAINTAINERS.md) to configure the repository on GitHub.
