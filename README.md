@@ -7,10 +7,10 @@ This is a simple project to demonstrate the cross-platform release management pr
 This repository can be used as a starting point for a new project. Follow these instructions:
 
 1. Rename all references to `Stem Cell` and `stem-cell` accordingly.
-2. Reset the version (e.g., to `0.0.0`) in `Cargo.toml` and `install.sh`.
-3. Run `cargo build` to update the version in `Cargo.lock`.
-4. Delete the entries in `CHANGELOG.md` except the one about the initial version.
-5. Follow the instructions in [`MAINTAINERS.md`](https://github.com/stepchowfun/stem-cell/blob/main/MAINTAINERS.md) to configure the repository on GitHub.
+2. Reset the version (e.g., to `0.0.0`) in `[file:Cargo.toml]` and `[file:install.sh]`.
+3. Run `cargo build` to update the version in `[file:Cargo.lock]`.
+4. Delete the entries in `[file:CHANGELOG.md]` except the one about the initial version.
+5. Follow the instructions in `[file:MAINTAINERS.md]` to configure the repository on GitHub.
 
 ## Installation instructions
 
