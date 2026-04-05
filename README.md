@@ -12,6 +12,25 @@ This repository can be used as a starting point for a new project. Follow these 
 4. Delete the entries in `[file:CHANGELOG.md]` except the one about the initial version.
 5. Follow the instructions in `[file:MAINTAINERS.md]` to configure the repository on GitHub.
 
+## Usage
+
+Once Stem Cell is [installed](#installation-instructions), you can run it from the command line as
+follows:
+
+```sh
+stem-cell
+```
+
+Here are the supported command-line options:
+
+```
+Usage: stem-cell
+
+Options:
+  -v, --version  Print version
+  -h, --help     Print help
+```
+
 ## Installation instructions
 
 ### Installation on macOS or Linux (AArch64 or x86-64)
