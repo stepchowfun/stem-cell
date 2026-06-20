@@ -17,4 +17,4 @@ clippy.pedantic = { level = "deny", priority = -1 }
 rust.warnings = "deny"
 
 [dependencies]
-clap = { version = "4", features = ["derive"] }
+clap = { version = "4.6.1", features = ["derive"] }
