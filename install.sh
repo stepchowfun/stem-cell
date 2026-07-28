@@ -13,9 +13,6 @@
   # Where the binary will be installed
   DESTINATION="${PREFIX:-/usr/local/bin}/stem-cell"
 
-  # Which version to download
-  RELEASE="v${VERSION:-0.1.0}"
-
   # Determine which binary to download.
   FILENAME=''
   if uname -a | grep -qi 'x86_64.*GNU/Linux'; then
@@ -56,9 +53,16 @@
   # Compute the full file path.
   SOURCE="$TEMPDIR/$FILENAME"
 
+  # Download the requested version, or the latest published version by default.
+  if [ -n "${VERSION:-}" ]; then
+    RELEASE_PATH="download/v$VERSION"
+  else
+    RELEASE_PATH=latest
+  fi
+
   # Download the binary.
   curl \
-    "https://github.com/stepchowfun/stem-cell/releases/download/$RELEASE/$FILENAME" \
+    "https://github.com/stepchowfun/stem-cell/releases/$RELEASE_PATH/download/$FILENAME" \
     -o "$SOURCE" -LSf || fail 'There was an error downloading the binary.'
 
   # Make it executable.
