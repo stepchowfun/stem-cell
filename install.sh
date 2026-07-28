@@ -55,15 +55,13 @@
 
   # Download the requested version, or the latest published version by default.
   if [ -n "${VERSION:-}" ]; then
-    RELEASE_PATH="download/v$VERSION"
+    DOWNLOAD_URL="https://github.com/stepchowfun/stem-cell/releases/download/v$VERSION/$FILENAME"
   else
-    RELEASE_PATH=latest
+    DOWNLOAD_URL="https://github.com/stepchowfun/stem-cell/releases/latest/download/$FILENAME"
   fi
 
   # Download the binary.
-  curl \
-    "https://github.com/stepchowfun/stem-cell/releases/$RELEASE_PATH/download/$FILENAME" \
-    -o "$SOURCE" -LSf || fail 'There was an error downloading the binary.'
+  curl "$DOWNLOAD_URL" -o "$SOURCE" -LSf || fail 'There was an error downloading the binary.'
 
   # Make it executable.
   chmod a+x "$SOURCE" || fail 'There was an error setting the permissions for the binary.'
