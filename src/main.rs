@@ -10,6 +10,7 @@ use clap::{ArgAction, Parser};
         env!("CARGO_PKG_HOMEPAGE"),
     ),
     version,
+    display_name = "Stem Cell",
     disable_version_flag = true
 )]
 struct Cli {
