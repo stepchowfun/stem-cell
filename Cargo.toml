@@ -1,19 +1,18 @@
 [package]
 name = "stem-cell"
 version = "0.1.0"
-authors = ["Stephan Boyer <stephan@stephanboyer.com>"]
 edition = "2024"
 description = "A simple project to demonstrate the cross-platform release management process I use for my open source work."
-license = "MIT"
 documentation = "https://github.com/stepchowfun/stem-cell"
-repository = "https://github.com/stepchowfun/stem-cell"
 readme = "README.md"
+repository = "https://github.com/stepchowfun/stem-cell"
+license = "MIT"
+
+[dependencies]
+clap = { version = "4.6.8", features = ["derive"] }
 
 [lints]
 clippy.all = { level = "deny", priority = -1 }
 clippy.default_numeric_fallback = "deny"
 clippy.pedantic = { level = "deny", priority = -1 }
 rust.warnings = "deny"
-
-[dependencies]
-clap = { version = "4.6.8", features = ["derive"] }
